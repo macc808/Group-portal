@@ -1,0 +1,83 @@
+Архітектура проекту
+group_portal/
+│
+├── manage.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+├── group_portal/             # Головна конфігурація Django (settings, urls, wsgi)
+│   ├── __init__.py
+│   ├── settings.py           # Потрібно додати sys.path.insert для папки apps
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── asgi.py
+│
+├── static/                   # Загальні статичні файли (CSS/JS/Bootstrap)
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│
+├── templates/                # Загальні та базові шаблони
+│   ├── base.html             # Каркас сторінки (Bootstrap CDN/Static, Navbar, Footer)
+│   ├── navbar.html
+│   └── footer.html
+│
+└── apps/                     # 🔥 ВСІ МОДУЛІ (APPS) ПРОЕКТУ ТУТ
+    ├── __init__.py
+    │
+    ├── core/                 # Головна сторінка та загальні віджети
+    │   ├── templates/core/
+    │   ├── views.py
+    │   └── urls.py
+    │
+    ├── accounts/             # Кастомний користувач, авторизація, ролі
+    │   ├── models.py         # CustomUser (student, moderator, admin)
+    │   ├── views.py
+    │   ├── forms.py
+    │   └── urls.py
+    │
+    ├── forum/                # Форум (Теми, Повідомлення)
+    │   ├── models.py
+    │   ├── views.py
+    │   └── urls.py
+    │
+    ├── diary/                # Електронний щоденник (Оцінки)
+    │   ├── models.py
+    │   ├── views.py
+    │   └── urls.py
+    │
+    ├── events/               # Події та Календар
+    │   ├── models.py
+    │   ├── views.py
+    │   └── urls.py
+    │
+    ├── surveys/              # Багатоетапні опитування (Django Sessions)
+    │   ├── models.py
+    │   ├── views.py
+    │   └── urls.py
+    │
+    ├── voting/               # Система голосувань
+    │   ├── models.py
+    │   ├── views.py
+    │   └── urls.py
+    │
+    ├── announcements/        # Оголошення
+    │   ├── models.py
+    │   ├── views.py
+    │   └── urls.py
+    │
+    ├── resources/            # Матеріали (Файли, Посилання, YouTube)
+    │   ├── models.py
+    │   ├── views.py
+    │   └── urls.py
+    │
+    ├── portfolio/            # Портфоліо студентів
+    │   ├── models.py
+    │   ├── views.py
+    │   └── urls.py
+    │
+    └── gallery/              # Галерея з модерацією
+        ├── models.py
+        ├── views.py
+        └── urls.py
