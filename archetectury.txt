@@ -1,0 +1,26 @@
+Архітектура проекту
+group_portal/
+│
+├── manage.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+│
+├── group_portal/             # Головна конфігурація Django (settings, urls, wsgi)
+│   ├── __init__.py
+│   ├── settings.py           # Потрібно додати sys.path.insert для папки apps
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── asgi.py
+│
+├── static/                   # Загальні статичні файли (CSS/JS/Bootstrap)
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│
+├── templates/                # Загальні та базові шаблони
+│   ├── base.html             # Каркас сторінки (Bootstrap CDN/Static, Navbar, Footer)
+│   ├── navbar.html
+│   └── footer.html
+│
+└── apps/
